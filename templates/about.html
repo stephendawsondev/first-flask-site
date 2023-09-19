@@ -17,7 +17,7 @@
 {% for member in company %}
 <div class="row featurette my-3{% if loop.index % 2 == 0 %} flex-row-reverse{% endif %}">
   <div class="col-md-7">
-    <h3>{{ member.name }}</h3>
+    <h3><a href="/about/{{ member.url }}">{{ member.name }}</a></h3>
     <p class="lead">{{ member.description }}</p>
   </div>
   <div class="col-md-5">
