@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from flask import Flask, render_template
 
 app = Flask(__name__)
@@ -33,6 +34,11 @@ def careers():
   Displays careers page
   """
   return render_template('careers.html')
+
+
+@app.context_processor
+def inject_now():
+    return {'now': datetime.utcnow()}
 
 if __name__ == "__main__":
     app.run(
